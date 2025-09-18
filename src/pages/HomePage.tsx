@@ -11,13 +11,13 @@ function Home() {
           <li className={styles.shapeItemCard}>
             <a
               className={styles.shapeLink}
-              href="/basic-clip-path">Basic Clip Path
+              href="/basic-clip-path">Basic Clip Path Shapes
             </a>
           </li>
           <li className={styles.shapeItemCard}>
             <a
               className={styles.shapeLink}
-              href="/complex-clip-path">Complex Clip Path
+              href="/complex-clip-path">Complex Clip Path Shapes
             </a>
           </li>
         </ul>

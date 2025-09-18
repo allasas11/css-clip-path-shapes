@@ -3,8 +3,8 @@ import styles from "./BasicClipPathShape.module.scss";
 const BasicClipPathShape: React.FC = () => {
   return (
     <div>
-      <h1>Basic Clip Path Shape</h1>
-      <p>This is a basic example of a clip-path shape.</p>
+      <h1>Basic Clip Path Shapes</h1>
+      <p>This is a basic example of a clip-path shapes.</p>
       <ul className={styles.shapesListContainer}>
         <li className={styles.shapeItemCard}>
             <div className={styles.CircleShape}></div>
@@ -20,9 +20,6 @@ const BasicClipPathShape: React.FC = () => {
         </li>
         <li className={styles.shapeItemCard}>
             <div className={styles.polygonShape}></div>
-        </li>
-        <li className={styles.shapeItemCard}>
-            <div className={styles.pathShape}></div>
         </li>
       </ul>
     </div>

@@ -4,7 +4,7 @@ function MainNavigation() {
   return (
     <nav className={styles.mainNavigation}>
       <div className={styles.logoContainer}>
-        Logo
+        <img src="/public/assets/Logo_1080x1080.svg" alt="Logo" className={styles.logoWrapper} />
       </div>
       <div className={styles.navigationContainer}>
         <ul className={styles.navigationList}>
