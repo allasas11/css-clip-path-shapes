@@ -4,7 +4,7 @@ function FooterNavigation() {
   return (
     <footer className={styles.footerNavigation}>
       <div className={styles.footerContent}>
-        <p className={styles.footerText}>@All Rights Reserved</p>
+        <p className={styles.footerText}>@All Rights Reserved 2025</p>
       </div>
     </footer>
   );
