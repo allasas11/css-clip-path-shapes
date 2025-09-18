@@ -1,0 +1,30 @@
+.mainNavigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    background-color: var(--nav-background);
+    padding: 1rem 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 0.5rem;
+    border: 1px solid var(--accent-color);
+    margin-bottom: 2rem;
+}
+.navigationList {
+   list-style: none;
+   display: flex;
+   gap: 1rem;
+   width: 100%;
+}
+
+.navigationItem {
+   margin: 0;
+}
+.navigationLink {
+   text-decoration: none;
+   color: var(--text-color);
+   font-weight: bold;
+   padding: 0.5rem 1rem;
+   border-radius: 0.25rem;
+   transition: background-color 0.3s, color 0.3s;
+}
