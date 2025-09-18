@@ -1,14 +1,17 @@
 import { Outlet } from "react-router-dom";
 import MainNavigation from "../components/MainNavigation";
 import FooterNavigation from "../components/FooterNavigation";
+import MainContainer from "../components/MainContainer";
 
 
 const MainPageLayout = () => (
   <>
     <MainNavigation />
-    <main>
-      <Outlet />
-    </main>
+    <MainContainer>
+      <main>
+        <Outlet />
+      </main>
+    </MainContainer>
     <FooterNavigation />
   </>
 );
