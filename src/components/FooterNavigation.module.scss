@@ -1,0 +1,20 @@
+.footerNavigation { 
+    background-color: var(--bg-color);
+    border: 1px solid var(--accent-color);
+    border-radius: 0.5rem;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footerContent {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+}
+
+.footerContent p {
+    color: var(--muted-color);
+    margin: 0;
+    font-size: 0.75rem;
+}
