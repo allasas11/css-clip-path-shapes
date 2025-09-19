@@ -18,10 +18,50 @@
   border-radius: clamp(0.25rem, 1vw, 0.5rem);
 }
 
-.pathFunctionShape {
+.pathFunctionShape1 {
   width: 200px;
   height: 200px;
   background-color: var(--accent-color);
-  clip-path: path('M20,230 Q40,205 50,180 T90,130 T150,80 T220,50 T290,20 L290,230 Z');
-  border: 1px solid var(--text-color);
+  clip-path: path("M 20,40 L 70,40 A 10,10 0,0,0 80,30 L 80,20 A 10,10 0,0,1 90,10 L 180,10 A 10,10 0,0,1 190,20 L 190,180 A 10,10 0,0,1 180,190 L 20,190 A 10,10 0,0,1 10,180 L 10,50 A 10,10 0,0,1 20,40 Z");
+  transition: all 0.3s ease;
 }
+
+.pathFunctionShape1:hover {
+  width: 200px;
+  height: 200px;
+  clip-path: path("M 15,10 L 65,10 A 10,10 0,0,1 70,15 L 70,25 A 10,10 0,0,1 65,30 L 15,30 A 10,10 0,0,1 10,25 L 10,15 A 10,10 0,0,1 15,10 Z");
+  cursor: pointer;
+}
+
+.pathPolygonShape {
+  width: 200px;
+  height: 200px;
+  background-color: var(--accent-color);
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  transition: clip-path 0.3s ease;
+}
+
+.pathPolygonShape:hover {
+  clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+  cursor: pointer;
+}
+
+.pathFunctionShape2 {
+  width: 200px;
+  height: 200px;
+  background-color: var(--accent-color);
+  clip-path: path("M100.05,30.81c47.7,31.7,100.15-7.96,80.3,58.96-9.69,32.67,9.42,54.11-18.95,69.93-79.7,44.44-85.44,16.26-126.53-35.85C-13.73,62.22,36.04-11.72,100.05,30.81Z");
+  transition: all 0.3s ease;
+}
+
+.pathFunctionShape2:hover {
+  width: 200px;
+  height: 200px;
+  clip-path: path("M41.74,14.78c47.7,8,59.45-25.38,81.48,32.59,11.26,29.63-59.56-31.41-55.11,38.52.99,15.56-32.89,4.15-40.89-14.81-7.16-16.96-16.34-61.47,14.52-56.3Z");
+  cursor: pointer;
+}
+
+
+
+
+
