@@ -7,7 +7,19 @@ const ComplexClipPathShape: React.FC = () => {
       <p>This is a complex example of a clip-path shapes.</p>
       <ul className={styles.shapesListContainer}>
         <li className={styles.shapeItemCard}>
-            <div className={styles.pathFunctionShape}></div>
+            <div className={styles.pathFunctionShape1}></div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathPolygonShape}></div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathFunctionShape2}></div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathFunctionShape4}></div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathFunctionShape5}></div>
         </li>
       </ul>
     </div>
