@@ -16,10 +16,19 @@ const ComplexClipPathShape: React.FC = () => {
             <div className={styles.pathFunctionShape2}></div>
         </li>
         <li className={styles.shapeItemCard}>
-            <div className={styles.pathFunctionShape4}></div>
+            <div className={styles.pathShape3}></div>
         </li>
         <li className={styles.shapeItemCard}>
-            <div className={styles.pathFunctionShape5}></div>
+            <div className={styles.pathShopCardContainer}>
+                <div className={styles.pathShopCardTitle}>Reabook</div>
+                <div className={styles.pathShopCardShape}>
+                    <img
+                      className={styles.shopCardImage}
+                      src="/public/assets/PNG/reebok_shoe.png" 
+                      alt="Shop Card Example" 
+                    />
+                </div>
+            </div>
         </li>
       </ul>
     </div>
