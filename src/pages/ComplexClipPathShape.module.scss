@@ -125,3 +125,40 @@
 }
 
 
+.pathInvertedBorderContainer {
+  width: 600px;
+  height: 400px;
+  background: var(--accent-color);
+  border-radius: 1.5rem;
+
+  position: relative;
+
+  & .InvertedBorderShape {
+    position: absolute;
+    content: " ";
+    height: 100px;
+    width: 50%;
+    background: var(--bg-color);
+    bottom: 0;
+    right: 0;
+    border-radius: 1.5rem 0 0 0;
+
+    &::before, &::after {
+      position: absolute;
+      content: " ";
+      width: 1.5rem;
+      aspect-ratio: 1;
+      background: radial-gradient(circle 1.5rem at top left, #0000 98%, var(--bg-color)) top left;
+    }
+
+    &::before {
+      bottom: 0;
+      left: -1.5rem;
+    }
+
+    &::after {
+      top: -1.5rem;
+      right: 0;
+    }
+  }
+}
