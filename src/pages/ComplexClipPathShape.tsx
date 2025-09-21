@@ -30,6 +30,11 @@ const ComplexClipPathShape: React.FC = () => {
                 </div>
             </div>
         </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathInvertedBorderContainer}>
+              <div className={styles.InvertedBorderShape}></div>
+            </div>
+        </li>
       </ul>
     </div>
   );
