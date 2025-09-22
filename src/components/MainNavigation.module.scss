@@ -1,40 +1,82 @@
+$nav-gap: clamp(1rem, 4vw, 3rem);
+$nav-padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
+$nav-border-radius: clamp(0.25rem, 1vw, 0.5rem);
+$nav-margin-bottom: clamp(1rem, 3vw, 2rem);
+$logo-size: clamp(32px, 6vw, 48px);
+$link-padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 2vw, 1rem);
+$link-border-radius: clamp(0.125rem, 0.5vw, 0.25rem);
+$transition-duration: 0.3s;
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin linkBase {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  padding: $link-padding;
+  border-radius: $link-border-radius;
+  transition: background-color $transition-duration, color $transition-duration;
+}
+
 .mainNavigation {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-    background-color: var(--nav-background);
-    padding: 1rem 2rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 0.5rem;
-    border: 1px solid var(--accent-color);
-    margin-bottom: 2rem;
-}
-.navigationList {
-   list-style: none;
-   display: flex;
-   gap: 1rem;
-   width: 100%;
-}
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: $nav-gap;
+  background-color: var(--nav-background);
+  padding: $nav-padding;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: $nav-border-radius;
+  border: 1px solid var(--accent-color);
+  margin-bottom: $nav-margin-bottom;
 
-.navigationItem {
-   margin: 0;
-}
-.navigationLink {
-   text-decoration: none;
-   color: var(--text-color);
-   font-weight: bold;
-   padding: 0.5rem 1rem;
-   border-radius: 0.25rem;
-   transition: background-color 0.3s, color 0.3s;
-}
+  .navigationContainer {
+      flex: 1;
 
-.logoContainer {
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   height: 48px;
-   width: 48px;
+      .navigationList {
+         list-style: none;
+         display: flex;
+         gap: clamp(0.5rem, 2vw, 1rem);
+         width: 100%;
+         margin: 0;
+         padding: 0;
+
+         .navigationItem {
+            margin: 0;
+            padding: 0;
+
+            .navigationLink {
+               @include linkBase;
+
+               &:hover {
+                  background-color: var(--accent-color);
+                  color: var(--bg-color);
+               }
+
+               &:focus {
+                  outline: 2px solid var(--accent-color);
+                  outline-offset: 2px;
+               }
+         }
+         }
+      }
+   }
+
+  .logoContainer {
+      @include flexCenter;
+      height: $logo-size;
+      width: $logo-size;
+      flex-shrink: 0;
+
+      .logoWrapper {
+         display: block;
+         width: 100%;
+         height: 100%;
+         object-fit: contain;
+      }
+   }
 }
-
-
