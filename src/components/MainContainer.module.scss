@@ -1,8 +1,17 @@
+$max-width: 1280px;
+$container-padding: clamp(1.5rem, 5vw, 3rem);
+$border-radius: clamp(0.25rem, 1vw, 0.5rem);
+
+@mixin containerBase {
+  max-width: $max-width;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid var(--accent-color);
+  border-radius: $border-radius;
+}
+
 .mainContainer {
-    max-width: 1280px;
-    margin: 0 auto;
-    text-align: center;
-    border: 1px solid var(--accent-color);
-    padding: clamp(1.5rem, 5vw, 3rem);
-    border-radius: clamp(0.25rem, 1vw, 0.5rem);
+  @include containerBase;
+  padding: $container-padding;
+  background-color: var(--bg-color);
 }
