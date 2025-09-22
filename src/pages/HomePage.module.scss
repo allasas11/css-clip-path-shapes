@@ -1,61 +1,75 @@
+$max-width: 1200px;
+$card-gap: 2rem;
+$border-radius: 0.5rem;
+$card-padding: 1rem;
+
+@mixin textCenter {
+  text-align: center;
+}
+
+@mixin cardBase {
+  background-color: var(--bg-color);
+  border: 1px solid var(--accent-color);
+  border-radius: $border-radius;
+  padding: $card-padding;
+}
 
 .homeHeader {
-    text-align: center;
-    margin-bottom: clamp(1.5rem, 5vw, 3rem);
-}
+  @include textCenter;
+  margin-bottom: clamp(1.5rem, 5vw, 3rem);
 
-.homeHeader p {
+  p {
     padding: clamp(1.5rem, 1.5vw, 3rem);
-}
-.homeHeader h1 {
+  }
+
+  h1 {
     margin: 0;
     font-size: clamp(2rem, 5vw, 3rem);
     color: var(--accent-color);
-}
+  }
 
-.homeHeader h2 {
-    margin: 0;
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    color: var(--text-color);
-    font-weight: 400;
-}
-
-.shapeExamples {
-    max-width: 1200px;
+  .shapeExamples {
+    max-width: $max-width;
     margin: 0 auto;
-    padding: 0 1rem;
-}
+    padding: 0 $card-padding;
 
-.shapeExamples h2 {
-    text-align: center;
-    font-size: clamp(1.5rem, 4vw, 2rem);
-    color: var(--text-color);
-    font-weight: 400;
-    margin-bottom: 1rem;
-}
+    h2 {
+      @include textCenter;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      color: var(--text-color);
+      font-weight: 400;
+      margin-bottom: $card-padding;
+    }
 
-.shapeList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-    list-style: none;
-}
+    .shapeList {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: $card-gap;
+      margin-top: $card-gap;
+      list-style: none;
 
-.shapeItemCard {
-    background-color: var(--bg-color);
-    border: 1px solid var(--accent-color);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    text-align: center;
-}
+      .shapeItemCard {
+        @include cardBase;
+        @include textCenter;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-.shapeLink {
-    text-decoration: none;
-    color: var(--text-color);
-}
-.shapeLink:hover {
-    color: var(--accent-color);
-}
+        &:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 4px 12px rgba(0, 255, 154, 0.1);
+        }
 
+        .shapeLink {
+          text-decoration: none;
+          color: var(--text-color);
+          display: block;
+          padding: 0.5rem;
+          transition: color 0.2s ease;
 
+          &:hover {
+            color: var(--accent-color);
+          }
+        }
+      }
+    }
+  }
+}
