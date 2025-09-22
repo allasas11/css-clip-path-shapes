@@ -1,62 +1,69 @@
+$max-width: 1280px;
+$padding: clamp(1rem, 2vw, 2rem);
+$shape-width: clamp(150px, 75%, 320px);
+$border-radius: clamp(0.25rem, 1vw, 0.5rem);
+$border-color: var(--text-color);
+$bg-color: var(--accent-color);
 
-.shapesListContainer {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: clamp(1rem, 2vw, 2rem);
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.shapeItemCard {
+@mixin flexCenter {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  flex: 1 1 320px;
-  margin: 1rem;
-  border: 1px solid var(--accent-color);
-  border-radius: clamp(0.25rem, 1vw, 0.5rem);
 }
 
-.CircleShape {
-  width: clamp(150px, 75%, 300px);
-  height: 320px;
+@mixin shapeBase {
+  width: $shape-width;
   margin: 0 auto;
-  background-color: var(--accent-color);
-  clip-path: circle(50px at center);
-  border: 1px solid var(--text-color);
- 
+  background-color: $bg-color;
+  border: 1px solid $border-color;
 }
 
-.CornerCircleShape {
-  width: clamp(150px, 75%, 300px);
-  height: 240px;
-  background-color: var(--accent-color);
-  clip-path: circle(50px at top left);
-  border: 1px solid var(--text-color);
+.shapesListContainer {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: $padding;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+
+  .shapeItemCard {
+    @include flexCenter;
+    flex-direction: column;
+    flex: 1 1 320px;
+    margin: 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: $border-radius;
+    padding: 1rem;
+
+    .CircleShape {
+      @include shapeBase;
+      height: 320px;
+      clip-path: circle(50px at center);
+    }
+
+    .CornerCircleShape {
+      @include shapeBase;
+      height: 240px;
+      clip-path: circle(50px at top left);
+    }
+
+    .ellipseShape {
+      @include shapeBase;
+      height: 240px;
+      clip-path: ellipse(25% 45% at 50% 50%);
+    }
+
+    .insetShape {
+      @include shapeBase;
+      height: 240px;
+      clip-path: inset(15% 15% 30% round 10% 0);
+    }
+
+    .polygonShape {
+      @include shapeBase;
+      height: 240px;
+      clip-path: polygon(85% 15%, 75% 65%, 15% 85%, 25% 35%);
+    }
+  }
 }
 
-.ellipseShape {
-  width: clamp(150px, 75%, 300px);
-  height: 240px;
-  background-color: var(--accent-color);
-  clip-path: ellipse(25% 45% at 50% 50%);
-  border: 1px solid var(--text-color);
-}
-
-.insetShape {
-  width: clamp(150px, 75%, 300px);
-  height: 240px;
-  background-color: var(--accent-color);
-  clip-path: inset(15% 15% 30% round 10% 0);
-  border: 1px solid var(--text-color);
-}
-
-.polygonShape {
-  width: clamp(150px, 75%, 300px);
-  height: 240px;
-  background-color: var(--accent-color);
-  clip-path: polygon(85% 15%, 75% 65%, 15% 85%, 25% 35%);
-  border: 1px solid var(--text-color);
-}
