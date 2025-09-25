@@ -20,6 +20,12 @@ function Home() {
               href="/complex-clip-path">Complex Clip Path Shapes
             </a>
           </li>
+          <li className={styles.shapeItemCard}>
+            <a
+              className={styles.shapeLink}
+              href="/inverted-border-radius">Inverted Border Radius Card
+            </a>
+          </li>
         </ul>
       </div>
     </div>

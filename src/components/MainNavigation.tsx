@@ -31,6 +31,9 @@ function MainNavigation() {
             <li className={styles.navigationItem}>
               <a className={styles.navigationLink} href="/complex-clip-path">Complex Shapes</a>
             </li>
+            <li className={styles.navigationItem}>
+              <a className={styles.navigationLink} href="/inverted-border-radius">Inverted Border Radius Card</a>
+            </li>
           </ul>
 
           {/* Mobile Menu Button */}
@@ -71,6 +74,11 @@ function MainNavigation() {
           <li className={styles.mobileMenuItem}>
             <a className={styles.mobileMenuLink} href="/complex-clip-path" onClick={closeMobileMenu}>
               Complex Shapes
+            </a>
+          </li>
+          <li className={styles.mobileMenuItem}>
+            <a className={styles.mobileMenuLink} href="/inverted-border-radius" onClick={closeMobileMenu}>
+              Inverted Border Radius Card
             </a>
           </li>
           
