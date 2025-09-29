@@ -33,6 +33,20 @@ const InvertedBorderRadiusCardPage: React.FC = () => {
                 </div>
             </div>
         </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.cardWrapper}>
+                <div className={styles.cardImg}>
+                    <img src="/assets/IMG/pexels-green-electric-scooter.jpg" alt="green-electric-scooter" />
+                </div>
+                <div className={styles.tag}>
+                    <p><span>€15,000</span></p>
+                </div>
+                <div className={styles.curveOne}>
+                </div>
+                <div className={styles.curveTwo}>
+                </div>
+            </div>
+        </li>
       </ul>
     </div>
   );
