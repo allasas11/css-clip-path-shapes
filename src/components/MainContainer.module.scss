@@ -1,8 +1,49 @@
+$breakpoints: (
+  mobile: 0,
+  tablet: 768px,
+  desktop: 1024px,
+  large: 1440px
+);
+
+$clip-angles: (
+  mobile: 97.5%,
+  tablet: 95%, 
+  desktop: 92.5%,
+  large: 90%
+);
+
+$max-width: 1280px;
+$container-padding: clamp(1.5rem, 5vw, 3rem);
+$border-radius: clamp(0.25rem, 1vw, 0.5rem);
+
+@mixin containerBase {
+  max-width: $max-width;
+  margin: 0 auto;
+  text-align: center;
+  // border: 1px solid var(--accent-color);
+  border-radius: $border-radius;
+}
+
 .mainContainer {
-    max-width: 1280px;
-    margin: 0 auto;
-    text-align: center;
-    border: 1px solid var(--accent-color);
-    padding: clamp(1.5rem, 5vw, 3rem);
-    border-radius: clamp(0.25rem, 1vw, 0.5rem);
+  @include containerBase;
+  height: 100%;
+  padding: $container-padding;
+  background-color: var(--bg-color);
+  background-image: url('https://transparenttextures.com/patterns/cubes.png');
+  background-repeat: repeat;
+  background-size: auto;
+  position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% map-get($clip-angles, mobile), 50% 100%, 0 map-get($clip-angles, mobile));
+  
+  @media (min-width: map-get($breakpoints, tablet)) {
+    clip-path: polygon(0 0, 100% 0, 100% map-get($clip-angles, tablet), 50% 100%, 0 map-get($clip-angles, tablet));
+  }
+  
+  @media (min-width: map-get($breakpoints, desktop)) {
+    clip-path: polygon(0 0, 100% 0, 100% map-get($clip-angles, desktop), 50% 100%, 0 map-get($clip-angles, desktop));
+  }
+  
+  @media (min-width: map-get($breakpoints, large)) {
+    clip-path: polygon(0 0, 100% 0, 100% map-get($clip-angles, large), 50% 100%, 0 map-get($clip-angles, large));
+  }
 }

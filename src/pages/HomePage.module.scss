@@ -1,5 +1,108 @@
+$max-width: 1200px;
+$card-gap: 2rem;
+$border-radius: 0.5rem;
+$card-padding: 1rem;
+
+@mixin textCenter {
+  text-align: center;
+}
+
+@mixin cardBase {
+  background-color: var(--bg-color);
+  border: 1px solid var(--accent-color);
+  border-radius: $border-radius;
+  padding: $card-padding;
+}
+
+$breakpoints: (
+  mobile: 0,
+  tablet: 768px,
+  desktop: 1024px,
+  large-desktop: 1440px
+);
+
+$clip-angles: (
+  mobile: 95%,
+  tablet: 90%, 
+  desktop: 85%,
+  large-desktop: 80%
+);
+
+.homeHeader {
+  @include textCenter;
+  width: 100%;
+  background-color: var(--bg-color);
+  padding: clamp(1.5rem, 5vw, 3rem);
+  border-radius: clamp(0.25rem, 1vw, 0.5rem);
+  padding-bottom: clamp(4rem, 12vw, 8rem);
+  clip-path: polygon(0 0, 100% 0, 100% map-get($clip-angles, mobile), 50% 100%, 0 map-get($clip-angles, mobile));
+  
+  @media (min-width: map-get($breakpoints, tablet)) {
+    clip-path: polygon(0 0, 100% 0, 100% map-get($clip-angles, tablet), 50% 100%, 0 map-get($clip-angles, tablet));
+  }
+  
+  @media (min-width: map-get($breakpoints, desktop)) {
+    clip-path: polygon(0 0, 100% 0, 100% map-get($clip-angles, desktop), 50% 100%, 0 map-get($clip-angles, desktop));
+  }
+  
+  @media (min-width: map-get($breakpoints, large-desktop)) {
+    clip-path: polygon(0 0, 100% 0, 100% map-get($clip-angles, large-desktop), 50% 100%, 0 map-get($clip-angles, large-desktop));
+  }
 
 
-.homeHeader p {
-    padding: clamp(1.5rem, 1.5vw, 3rem);
+
+    p {
+      padding: clamp(1.5rem, 1.5vw, 3rem);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3rem);
+      color: var(--accent-color);
+    }
+
+    .shapeExamples {
+      max-width: $max-width;
+      margin: 0 auto;
+      padding: 0 $card-padding;
+
+      h2 {
+        @include textCenter;
+        font-size: clamp(1.5rem, 4vw, 2rem);
+        color: var(--text-color);
+        font-weight: 400;
+        margin-bottom: $card-padding;
+      }
+
+      .shapeList {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: $card-gap;
+        margin-top: $card-gap;
+        list-style: none;
+
+        .shapeItemCard {
+          @include cardBase;
+          @include textCenter;
+          transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+          &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 255, 154, 0.1);
+          }
+
+          .shapeLink {
+            text-decoration: none;
+            color: var(--text-color);
+            display: block;
+            padding: 0.5rem;
+            transition: color 0.2s ease;
+
+            &:hover {
+              color: var(--accent-color);
+            }
+          }
+        }
+      }
+    }
 }

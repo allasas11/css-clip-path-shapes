@@ -1,0 +1,42 @@
+import styles from "./ComplexClipPathShape.module.scss";
+
+const ComplexClipPathShape: React.FC = () => {
+  return (
+    <div>
+      <h1>Complex Clip Path Shapes</h1>
+      <p>This is a complex example of a clip-path shapes.</p>
+      <ul className={styles.shapesListContainer}>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathFunctionShape1}></div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathPolygonShape}></div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathFunctionShape2}></div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathShape3}></div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathShopCardContainer}>
+                <div className={styles.pathShopCardTitle}>Reabook</div>
+                <div className={styles.pathShopCardShape}>
+                    <img
+                      className={styles.shopCardImage}
+                      src="/public/assets/PNG/reebok_shoe.png" 
+                      alt="Shop Card Example" 
+                    />
+                </div>
+            </div>
+        </li>
+        <li className={styles.shapeItemCard}>
+            <div className={styles.pathInvertedBorderContainer}>
+              <div className={styles.InvertedBorderShape}></div>
+            </div>
+        </li>
+      </ul>
+    </div>
+  );
+}
+ export default ComplexClipPathShape;
