@@ -1,0 +1,169 @@
+$shape-width: 200px;
+$shape-height: 200px;
+$transition-duration: 0.3s;
+$card-gap: clamp(1rem, 2vw, 2rem);
+$border-radius: clamp(0.25rem, 1vw, 0.5rem);
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin shapeBase {
+  width: $shape-width;
+  height: $shape-height;
+  background-color: var(--accent-color);
+  transition: clip-path $transition-duration ease;
+}
+
+.shapesListContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: $card-gap;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: $card-gap;
+}
+
+.shapeItemCard {
+  @include flexCenter;
+  flex-direction: column;
+  flex: 1 1 320px;
+  position: relative;
+  gap: 5px;
+  border: 1px solid var(--accent-color);
+  border-radius: $border-radius;
+
+  &:hover {
+    .pathFunctionShape1 {
+      clip-path: path("M 15,10 L 65,10 A 10,10 0,0,1 70,15 L 70,25 A 10,10 0,0,1 65,30 L 15,30 A 10,10 0,0,1 10,25 L 10,15 A 10,10 0,0,1 15,10 Z");
+      cursor: pointer;
+    }
+
+    .pathPolygonShape {
+      clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+      cursor: pointer;
+    }
+
+    .pathFunctionShape2 {
+      clip-path: path("M41.74,14.78c47.7,8,59.45-25.38,81.48,32.59,11.26,29.63-59.56-31.41-55.11,38.52.99,15.56-32.89,4.15-40.89-14.81-7.16-16.96-16.34-61.47,14.52-56.3Z");
+      cursor: pointer;
+    }
+
+    .pathShape3 {
+      clip-path: path("M20,170 Q10,150 20,130 L40,50 Q50,30 70,50 L130,50 Q150,30 160,50 L180,130 Q190,150 180,170 Z");
+      cursor: pointer;
+    }
+  }
+}
+
+
+.pathFunctionShape1 {
+  @include shapeBase;
+  clip-path: path("M 20,40 L 70,40 A 10,10 0,0,0 80,30 L 80,20 A 10,10 0,0,1 90,10 L 180,10 A 10,10 0,0,1 190,20 L 190,180 A 10,10 0,0,1 180,190 L 20,190 A 10,10 0,0,1 10,180 L 10,50 A 10,10 0,0,1 20,40 Z");
+  transition: all $transition-duration ease;
+}
+
+.pathPolygonShape {
+  @include shapeBase;
+  clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+}
+
+.pathFunctionShape2 {
+  @include shapeBase;
+  clip-path: path("M100.05,30.81c47.7,31.7,100.15-7.96,80.3,58.96-9.69,32.67,9.42,54.11-18.95,69.93-79.7,44.44-85.44,16.26-126.53-35.85C-13.73,62.22,36.04-11.72,100.05,30.81Z");
+  transition: all $transition-duration ease;
+}
+
+.pathShape3 {
+  @include shapeBase;
+  clip-path: path("M20,30 Q10,50 20,70 L40,150 Q50,170 70,150 L130,150 Q150,170 160,150 L180,70 Q190,50 180,30 Z");
+}
+
+
+.pathShopCardContainer {
+  @include flexCenter;
+  width: $shape-width;
+  height: $shape-height;
+  background-color: var(--bg-color);
+  border-radius: $border-radius;
+  position: relative;
+}
+
+.pathShopCardTitle {
+  position: absolute;
+  top: 0;
+  left: 1.5rem;
+  height: 1rem;
+  width: 4.15rem;
+  background: var(--muted-color);
+  clip-path: inset(0.5px round 8px 0);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--bg-color);
+  @include flexCenter;
+  padding: 0.05rem;
+}
+
+.pathShopCardShape {
+  position: relative;
+  width: 150px;
+  height: $shape-height;
+  background-color: var(--accent-color);
+  clip-path: path("M 10,20 L 60,20 A 10,10 0,0,0 70,10 L 70,10 A 10,10 0,0,1 80,0 L 140,0 A 10,10 0,0,1 150,10 L 150,190 A 10,10 0,0,1 140,200 L 10,200 A 10,10 0,0,1 0,190 L 0,30 A 10,10 0,0,1 10,20 Z");
+  overflow: hidden;
+  transition: clip-path $transition-duration ease;
+  @include flexCenter;
+
+  img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    rotate: -15deg;
+    padding: 10px;
+  }
+}
+
+.pathInvertedBorderContainer {
+  width: 600px;
+  height: 400px;
+  background: var(--accent-color);
+  border-radius: 1.5rem;
+  position: relative;
+
+  .InvertedBorderShape {
+    position: absolute;
+    content: " ";
+    height: 100px;
+    width: 50%;
+    background: var(--bg-color);
+    bottom: 0;
+    right: 0;
+    border-radius: 1.5rem 0 0 0;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: " ";
+      width: 1.5rem;
+      aspect-ratio: 1;
+      background: radial-gradient(
+        circle 1.5rem at top left,
+        transparent 98%,
+        var(--bg-color)
+      ) top left;
+    }
+
+    &::before {
+      bottom: 0;
+      left: -1.5rem;
+    }
+
+    &::after {
+      top: -1.5rem;
+      right: 0;
+    }
+  }
+}
